@@ -21,7 +21,7 @@ flowchart LR
 ```
 
 ### Introduction
-*Akkermansia muciniphila* is a polyphenol-resistant, mucin-degrading gut bacterium strongly associated with improved intestinal health. Dietary polyphenols have been shown to stimulate intestinal mucus production, enhancing the ecological niche for *A. muciniphila*. Because *A. muciniphila* is resistant to polyphenols and faces reduced competition from other susceptible microbes, its abundance tends to increase following polyphenol supplementation. 
+*Akkermansia muciniphila* is a polyphenol-resistant, mucin-degrading gut bacterium strongly associated with improved intestinal health. Dietary polyphenols have been shown to stimulate intestinal mucus production, enhancing the ecological niche for *A. muciniphila*. Because *A. muciniphila* is resistant to polyphenols and faces reduced competition from other susceptible microbes, its abundance tends to increase following polyphenol supplementation. Therefore, dietary polyphenols pose a promising prebiotic for maintaining intestinal homeostasis through their interaction with beneficial *A. muciniphila*, leading to positive health outcomes.
 
 ### Research Hypothesis
 Cranberry-derived polyphenol supplementation increases the abundance of Akkermansia muciniphila in the human gut.
