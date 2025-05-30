@@ -6,12 +6,15 @@ include { download_fastq } from './modules/download.nf'
 include { run_ampliseq } from './modules/ampliseq.nf'
 
 workflow {
+    // Read accessions from list and run SRA download
     accessions = Channel
         .fromPath('./data/accession_list.txt')
         .splitText()
         .filter { it.trim() }
 
-    download_fastq(accessions)
+    // Run SRA download
+    downloaded_fastq = download_fastq(accessions)
 
-    run_ampliseq()
+    // Run nf-core ampliseq
+    run_ampliseq(downloaded_fastq)
 }
