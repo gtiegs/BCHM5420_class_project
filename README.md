@@ -4,19 +4,23 @@
 ```mermaid
 flowchart LR
     A[Does A. muciniphila abundance increase with cranberry polyphenol treatment?] --> B[Download FASTQ from SRA using sra-tools]
-    B --> C[nf-core/ampliseq]
-    C --> |FastQC, MultiQC|D[Quality control]
-    C --> |CutAdapt|E[Primer trimming]
-    C --> |DADA2|F[ASV inference]
-    C --> |Barrnap, QIMME2|G[Taxonomy assignment]
-    C --> |EPA-NG, TreeSE|H[Phylogenetic tree construction]
-    C --> |Phyloseq, TreeSE|I[Visualisation]
-    D --> J[Aggregated output reports]
-    E --> J
+     subgraph nf-core/ampli-seq   
+        B --> |FastQC, MultiQC|D[Quality control]
+    B --> |CutAdapt|E[Primer trimming]
+    B --> |DADA2|F[ASV inference]
+    B --> |Barrnap, QIMME2|G[Taxonomy assignment]
+    B --> |EPA-NG, TreeSE|H[Phylogenetic tree construction]
+    B --> |Phyloseq, TreeSE|I[Visualisation]
+    end
+    B --> J[Aggregated output reports]
+    D --> J
     F --> J
+    E --> J
     G --> J
     H --> J
     I --> J
+
+    
     J --> K[Evaluate hypothesis]
 ```
 
