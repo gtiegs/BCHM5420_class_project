@@ -15,11 +15,12 @@ if [ $? -eq 0 ]; then
     nextflow run nf-core/ampliseq \
         -profile docker \
         --input results/fastq \
+        --extension "*_{1,2}.fastq.gz" \
         --FW_primer 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG' \
         --RV_primer 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC' \
         --metadata ./data/metadata.csv \
         --outdir results/ampliseq
 else
-    echo "SRA download failed. Aborting pipeline."
+    echo "SRA download failed. Ending pipeline."
     exit 1
 fi
