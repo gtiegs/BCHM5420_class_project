@@ -25,8 +25,10 @@ process DOWNLOAD_FASTQ {
     # Create temp directory for SRA files
     mkdir -p ./sra_temp
 
+    echo "Downloading ${accession}"
+
     # Download SRA files
-    prefetch $accession --output-directory ./sra_temp
+    prefetch ${accession} --output-directory ./sra_temp
 
     # Convert SRA files to fastq
     fasterq-dump ./sra_temp/${accession}/${accession}.sra \\
@@ -39,5 +41,7 @@ process DOWNLOAD_FASTQ {
 
     # Remove temp directory
     rm -rf ./sra_temp
+
+    echo "Completed downloading ${accession}"
     """
 }
