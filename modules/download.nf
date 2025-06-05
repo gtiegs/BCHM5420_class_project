@@ -18,7 +18,7 @@ process DOWNLOAD_FASTQ {
     val accession
 
     output:
-    tuple val(accession), path("${accession}*.fastq.gz"), emit fastq
+    tuple val(accession), path("${accession}*.fastq.gz"), emit: fastq
 
     script:
     """
