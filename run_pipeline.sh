@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Activate conda environment
-conda activate <env_name>
+conda activate 5420_16S_pipeline
 
 # Run the download workflow first
 echo "Starting SRA download..."
@@ -18,7 +18,7 @@ if [ $? -eq 0 ]; then
         --extension "*_{1,2}.fastq.gz" \
         --FW_primer 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG' \
         --RV_primer 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC' \
-        --metadata ./data/metadata.csv \
+        --metadata ./data/metadata.tsv \
         --outdir results/ampliseq
 else
     echo "SRA download failed. Ending pipeline."
