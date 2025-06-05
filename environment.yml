@@ -4,5 +4,6 @@ channels:
   - bioconda
 dependencies:
   - python=3.12
-  - nextflow=25.04.3 status
+  - pandas=2.3.0
+  - nextflow=25.04.3
   
