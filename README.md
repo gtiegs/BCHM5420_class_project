@@ -41,6 +41,3 @@ This project leverages the nf-core/ampliseq pipeline to perform 16S rRNA communi
 ### Data Sources
 - Raw FASTQ files are downloaded from the [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra/) under BioProject **PRJNA955174** using sra-tools (prefetch and fasterq-dump). 
 - Metadata is downloaded from the [SRA](https://www.ncbi.nlm.nih.gov/sra/) website using the RunSelector function.
-
-
-
