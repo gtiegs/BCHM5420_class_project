@@ -1,0 +1,8 @@
+name: 5420_16S_pipeline
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - nextflow=25.04.3 status
+  

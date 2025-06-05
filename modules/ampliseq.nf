@@ -11,7 +11,7 @@ process run_ampliseq {
     tag "nf-core/ampliseq"
 
     input:
-    // No input needed if you already have the samplesheet and metadata
+    path("raw_fastq")
 
     output:
     path("results/ampliseq") into ampliseq_results
@@ -19,10 +19,10 @@ process run_ampliseq {
     script:
     """
     nextflow run nf-core/ampliseq \\
-        -profile singularity \\
+        -profile docker \\
         --input_folder "./raw_fastq/" \\
-        --FW_primer TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG \\
-        --RV_primer GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC \\
+        --FW_primer '${params.FW_primer}' \\
+        --RV_primer '${params.RV_primer}' \\
         --metadata "./data/metadata.csv" \\
         --outdir "results/ampliseq"
     """
