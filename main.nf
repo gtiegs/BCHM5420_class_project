@@ -18,7 +18,7 @@ workflow {
     """
 
     // Read accessions from list and create channel
-    accessions_ch = channel
+    accessions_ch = Channel
         .fromPath(params.accessions)
         .splitText()
         .map { it.trim() }
