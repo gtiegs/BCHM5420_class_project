@@ -10,8 +10,8 @@ workflow {
     SRA download ( PRJNA955174 ) for nf-core/ampliseq
     ===================================================
     accessions   : ${params.accessions}
-    fw_primer    : ${params.FW_primer}
-    rv_primer    : ${params.RV_primer}
+    FW_primer    : ${params.FW_primer}
+    RV_primer    : ${params.RV_primer}
     metadata     : ${params.metadata}
     outdir       : ${params.outdir}
     ===================================================
@@ -28,10 +28,10 @@ workflow {
     DOWNLOAD_FASTQ(accessions_ch)
     
     // Collect all downloaded fastq files
-    downloaded_files = DOWNLOAD_FASTQ.out.collect()
+    downloaded_files = DOWNLOAD_FASTQ.out.fastq.collect()
 
     // SRA-tools prefetch and fasterq-dump is complete
     downloaded_files.view { 
-        "Download completed. Run nf-core/ampliseq manually with: --input ${params.outdir}/fastq --FW_primer '${params.FW_primer}' --RV_primer '${params.RV_primer}'"
+        "FASTQ file download completed. Beginning to run nf-core/ampliseq with: --input ${params.outdir}/fastq --FW_primer '${params.FW_primer}' --RV_primer '${params.RV_primer}'"
     }
 }
