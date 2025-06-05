@@ -12,7 +12,7 @@ if [ $? -eq 0 ]; then
     echo "SRA download completed successfully. Starting ampliseq..."
     
     # Run nf-core/ampliseq
-    nextflow run nf-core/ampliseq \
+    nextflow run ampliseq/main.nf \
         -profile docker \
         --input results/fastq \
         --extension "*_{1,2}.fastq.gz" \
