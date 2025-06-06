@@ -5,7 +5,7 @@ conda activate 5420_16S_pipeline
 
 # Run the download workflow first
 echo "Starting SRA download..."
-nextflow run main.nf -profile docker
+nextflow run main.nf -profile docker -resume
 
 # Check if download was successful
 if [ $? -eq 0 ]; then
@@ -14,7 +14,8 @@ if [ $? -eq 0 ]; then
     # Run nf-core/ampliseq
     nextflow run ampliseq/main.nf \
         -profile docker \
-        --input results/fastq \
+        -resume \
+        --input_folder results/fastq \
         --extension "*_{1,2}.fastq.gz" \
         --FW_primer 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG' \
         --RV_primer 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC' \
