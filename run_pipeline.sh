@@ -15,12 +15,15 @@ if [ $? -eq 0 ]; then
     nextflow run ampliseq/main.nf \
         -profile docker \
         -resume \
-        --input_folder results/fastq \
+        --input_folder ".results/fastq" \
         --extension "*_{1,2}.fastq.gz" \
         --FW_primer 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG' \
         --RV_primer 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC' \
-        --metadata ./data/metadata.tsv \
-        --outdir results/ampliseq
+        --metadata "./data/metadata.tsv" \
+        --metadata_category "VISIT,SUBJECT" \
+        --metadata_category_barplot "VISIT" \
+        --outdir ".results/ampliseq" \
+        --ancombc 
 else
     echo "SRA download failed. Ending pipeline."
     exit 1
