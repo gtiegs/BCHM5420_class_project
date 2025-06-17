@@ -90,6 +90,7 @@ conda activate BCHM5420_class_project
 chmod +x run_pipeline.sh
 ./run_pipeline.sh
 ```
+*For instructions on how to install and run the ampliseq pipeline on a HPC cluster, refer to the [`./hpc_log.sh` script](https://github.com/gtiegs/BCHM5420_class_project/blob/main/hpc_log.sh).*
 
 ## Outputs
 Directory structure:
