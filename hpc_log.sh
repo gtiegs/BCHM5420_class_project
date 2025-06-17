@@ -73,9 +73,7 @@ nextflow run nf-core-${NFCORE_PL}_${PL_VERSION}/2_14_0/ \
 #SBATCH --output=ampliseq_%j.out
 #SBATCH --error=ampliseq_%j.err
 #SBATCH --mem=3g
-#SBATCH --time=36:00:00
-#SBATCH --mail-type=FAIL
-#SBATCH --mail-user=georgiatiegs@uvic.ca
+#SBATCH --time=12:00:00
 
 # Load modules
 module load python/3.11 rust postgresql nextflow/24.10.2 apptainer/1.3.5
